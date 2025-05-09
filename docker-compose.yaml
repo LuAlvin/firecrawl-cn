@@ -86,6 +86,7 @@ services:
     # uncomment the Valkey statement and comment out the Redis statement.
     # Using Valkey with Firecrawl is untested and not guaranteed to work. Use with caution.
     image: redis:alpine
+    container_name: firecrawl-redis
     # image: valkey/valkey:alpine
 
     networks:
