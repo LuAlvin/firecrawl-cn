@@ -492,7 +492,33 @@ curl -X POST https://api.firecrawl.dev/v1/batch/scrape \
     }'
 ```
 
+## 使用 Docker 部署
 
+### 克隆项目(增加了国内代理)
+
+```bash
+git clone https://gh.llkk.cc/https://github.com/LuAlvin/firecrawl-cn.git
+```
+
+### 拷贝env文件
+
+```bash
+cd firecrawl-cn
+cp ./apps/api/.env.example ./.env
+```
+### 设置秘钥
+
+修改.env文件中的“TEST_API_KEY”设置一个秘钥
+
+### 开始项目
+(因为要build镜像过程会比较久)
+```bash
+docker compose up -d
+```
+
+### 注意事项
+linux使用Docker部署后本机调用的api地址是 http://172.17.0.1:3002
+Windows和mac的地址是http://host.docker.internal:3002
 
 ## Using Python SDK
 
@@ -658,7 +684,6 @@ Please note:
 - When using or contributing to this project, ensure you comply with the appropriate license terms for the specific component you are working with.
 
 For more details on the licensing of specific components, please refer to the LICENSE files in the respective directories or contact the project maintainers.
-
 
 <p align="right" style="font-size: 14px; color: #555; margin-top: 20px;">
     <a href="#readme-top" style="text-decoration: none; color: #007bff; font-weight: bold;">
