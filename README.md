@@ -492,31 +492,31 @@ curl -X POST https://api.firecrawl.dev/v1/batch/scrape \
     }'
 ```
 
-## 使用 Docker 部署
+## Deploy with Docker
 
-### 克隆项目(增加了国内代理)
+### Cloning project (added domestic agents)
 
 ```bash
 git clone https://gh.llkk.cc/https://github.com/LuAlvin/firecrawl-cn.git
 ```
 
-### 拷贝env文件
+### Copy env file
 
 ```bash
 cd firecrawl-cn
 cp ./apps/api/.env.example ./.env
 ```
-### 设置秘钥
+### Set secret key
 
 修改.env文件中的“TEST_API_KEY”设置一个秘钥
 
-### 开始项目
-(因为要build镜像过程会比较久)
+### start the project
+(IT's will take a long time)
 ```bash
 docker compose up -d
 ```
 
-### 注意事项
+### Tips
 linux使用Docker部署后本机调用的api地址是 http://172.17.0.1:3002
 Windows和mac的地址是http://host.docker.internal:3002
 
